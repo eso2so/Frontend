@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Box</title>
+    <style>
+      div {
+        display: inline-block;
+      }
+      span {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS 박스</h1>
+    <div style="width: 100px; height: 100px; border: 1px solid black">블록</div>
+    <!-- 블록 속성은 무조건 줄바꿈이 있다. 자리 차지한다. 
+        부모 내에서 최대너비, 여백있으면 고려해서 내 최대너비
+        높이는 컨텐츠만큼 늘어난다. -->
+    <span style="width: 50%; height: 100px; border: 1px solid black"
+      >인라인</span
+    >
+    <!-- 인라인 속성은 자신이 가진 컨텐츠만큼 영역 지정인데 안 가지고 있으면 커서 0이다다다다 
+        -->
+    <!-- NONE은 아예 없는 것으로 처리해서 위로 밀어올림 -->
+  </body>
+</html>
