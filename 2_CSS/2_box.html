@@ -5,10 +5,38 @@
     <title>CSS Box</title>
     <style>
       div {
-        display: inline-block;
+        display: inline;
       }
       span {
         display: block;
+      }
+      .container {
+        display: block;
+        border: 3px solid black;
+        width: 150px;
+        /* height : 400px; */
+
+        /* overflow : visible; */
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        overflow: auto; /*넘칠 경우만 스크롤바 생성 */
+      }
+      .box {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+
+        /*바깥 여백(단축속성) */
+        margin: 50px;
+        border-color: red;
+
+        /* 방향별 border 설정 */
+        border-bottom: 1px solid green;
+        border-bottom-width: 5px;
+
+        /* 너비와 높이의 계산 방법 */
+        box-sizing: border-box; /*padding과 border를 포함해서 width를 지정한 갑승로 계산한다. */
       }
     </style>
   </head>
@@ -24,5 +52,10 @@
     <!-- 인라인 속성은 자신이 가진 컨텐츠만큼 영역 지정인데 안 가지고 있으면 커서 0이다다다다 
         -->
     <!-- NONE은 아예 없는 것으로 처리해서 위로 밀어올림 -->
+    <div class="container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
   </body>
 </html>
