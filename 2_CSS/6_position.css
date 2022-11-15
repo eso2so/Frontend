@@ -25,7 +25,9 @@ body {
     /* fixed: viewport로 보임, 스크롤내려도 고정 */
     position: fixed;
     top: 0;
-    right: 20px;
+    /* 기준점이 오른쪽 */
+    left: 0;
+    right: -20px;
 
     /* top: 100px; */
 }
@@ -37,10 +39,13 @@ body {
 .box:nth-child(2) {
     background-color: yellow;
 
-    /* position: 기준을 잡음, static이면 offset, z-index 다 무용지물 */
+    /* position: 기준을 잡음, 
+    static이면 offset, z-index 다 무용지물 
+    absolute나 fixed일 경우 특성이 인라인 요소처럼 컨텐트 만큼만 가짐*/
+
     position: absolute;
 
-    /* offset: 위치(상,하,좌,우 좌표)를 잡음, 자기의 상위요소 (부모 기준)으로 움직임    position: static 만 아니면 됨 */
+    /* offset: 기준으로부터 얼마나 위치(상,하,좌,우 좌표)를 잡음, 자기의 상위요소 (부모 기준)으로 움직임    position: static 만 아니면 됨 */
     top: 0;
     right: 10px;
     z-index: 100;
@@ -50,4 +55,13 @@ body {
     position: absolute;
     background-color: red;
     z-index: 300;
+}
+
+.btn {
+    position: absolute;
+    height: 100px;
+    background-color: tomato;
+    /* width를 고정하지 않으면 양쪽으로부터 100px임 */
+    left: 100px;
+    right: 100px;
 }

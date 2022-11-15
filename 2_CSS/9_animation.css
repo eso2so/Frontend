@@ -1,0 +1,49 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    animation-name: slideUp, fadeIn;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+
+    transform: rotate(30deg);
+    /* rootate 유지하려면 아래처럼 매번 넣어줘야 함. */
+
+    animation: slideUp infinite 1s 4s, fadeIn 0.25s;
+}
+
+.box:hover {
+    animation-play-state: paused;
+}
+
+@keyframes slideUp {
+    /* from {
+        transform: translate(300px);
+    } */
+    /* to {
+        transform: translate(100px);
+    } */
+    0% {
+        transform: translate(100px) rotate(0deg);
+    }
+    50% {
+        transform: translate(400px) rotate(180deg);
+    }
+    100% {
+        transform: translate(300px) rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
