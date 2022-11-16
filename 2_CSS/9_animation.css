@@ -14,6 +14,7 @@
     transform: rotate(30deg);
     /* rootate 유지하려면 아래처럼 매번 넣어줘야 함. */
 
+    /* 초의 순서 */
     animation: slideUp infinite 1s 4s, fadeIn 0.25s;
 }
 

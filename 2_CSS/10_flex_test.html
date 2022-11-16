@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>CSS flex</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                display: flex;
+                align-items: center;
+                /* position: relative;
+                height: 40px; */
+                background-color: #eee;
+                height: 60px;
+            }
+            h1 {
+                /* position: absolute;
+                top: 0;
+                left: 0; */
+                position: absolute;
+                margin-left: 30px;
+            }
+            nav {
+                /* margin-left: 30px; */
+                flex: 1;
+            }
+            nav ul {
+                display: flex;
+                justify-content: center;
+                /* height: 100%; */
+            }
+            li {
+                list-style: none;
+            }
+            li a {
+                /* li a: 블록, 클릭했을 때 새로고침 효과 */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                height: 100%;
+            }
+            li a:hover {
+                background-color: #bbb;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1><a href="">Nepp</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="">HTML</a></li>
+                    <li><a href="">CSS</a></li>
+                    <li><a href="">JavaScript</a></li>
+                </ul>
+            </nav>
+        </header>
+    </body>
+</html>
