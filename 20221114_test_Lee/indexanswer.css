@@ -1,0 +1,24 @@
+* {
+    justify-content: center;
+
+    padding-inline: 10px;
+    height: 30px;
+}
+
+table {
+    /* 정답임 */
+    text-align: center;
+}
+
+th {
+    /* 정답임 */
+    background-color: #000;
+    color: #fff;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+tr:nth-child(even) {
+    /* tr:nth-child(2n) */
+    background-color: #ddd;
+}
