@@ -49,12 +49,12 @@ console.log(num03);
 console.log(num04);
 
 // 비교 연산자좌항과 우항을 비교해 true 혹은 false 를 반환
-// 동등 연산자(==) : 암묵적 형변환을 한다.
+// 동등 연산자(==) : 암묵적 형변환을 한다. (데이터 타입 변환)
 console.log("3 == 1 + 2 :", 3 == 1 + 2);
 console.log("3 == '3' : ", 3 == "3");
 console.log("0 == false : ", 0 == false);
 
-// 일치 연산자(===) : 암묵적 형변환을 하지 않는다.
+// 일치 연산자(===) : 암묵적 형변환(데이터 타입 변환)을 하지 않는다.
 console.log("3 === 1 + 2 :", 3 === 1 + 2);
 console.log("3 === '3' : ", 3 === "3");
 console.log("0 === false : ", 0 === false);
@@ -103,20 +103,6 @@ console.log(1 + "1"); // 숫자 1이 문자열로 암묵적 형변환
 // typeof 연산자 : 피연산자의 데이터 타입을 반환한다.
 console.log(typeof "안녕하세요");
 
-// 원시 데이터(Primative Data) (다른 메모리 주소에 값을 복제함)
-/// => 실제 저장되어 있는 값
-var str = "hwangbo seok";
-var copyStr = str;
-copyStr = "minsu";
-console.log(str, copyStr);
-
-// 참조 타입 데이터 (주소값을 복사하기 때문에 같은 객체를 바라보고 있음, 복제개념이 아님)
-// => 데이터가 저장되어 있는 참조값
-var obj = {
-    age: 30,
-    name: "seok",
-};
-
-var copyObj = obj;
-copyObj.age = 40;
-console.log(copyObj, obj);
+// 문자열을 숫자로 바꾼다. => 숫자로 변환 가능한 문자열만 바꾼다.
+//  => 숫자로 변환 불가능한 경우엔 NaN(Not a Number)을 반환한다.
+console.log(parseInt("false"));
