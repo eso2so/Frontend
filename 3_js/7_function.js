@@ -99,6 +99,12 @@ let getData = function () {
     console.log("익명 함수입니다.");
 };
 
+// 식별자가 필요하다 => 함수 선언식 혹은 함수 표현식의 형태로 식별자를 써야 한다.
+//  => 값으로 전달되는 경우에는 식별자가 필요없다.
+// function (a, b) {
+//   return a +b;
+// }
+
 /* 
     화살표 함수(Arrow Function)
         => function 키워드를 사용하지 않고 "=>"를 통해서 간겨하게 작성 가능하다.
@@ -147,3 +153,26 @@ function foo() {
 //  => 함수를 값으로 사용할 때는 호출이 아니라 식별자를 참조해야 한다.
 let copyFunc = foo;
 console.log(copyFunc());
+
+/* 
+    콜백함수 (Callback Function)
+        => 함수의 값으로 전달되는 함수.
+        => 함수에서 실행되는 코드가 나중에 정해질 때 사용한다.
+        => 콜백함수로 익명함수를 많이 사용한다.(코드블록을 그냥 전달할 수 없어 함수 형태로 전달하는 것임)
+        => 값으로 전달할 때는 호출이 아니라 함수 자체를 전달해야 한다.(식별자 필요없이, 익명함수처럼 쓰임)
+*/
+
+function repeat(repeatCount, callback) {
+    for (let i = 0; i < repeatCount; i++) {
+        callback();
+    }
+}
+
+/* function print() {
+    console.log("코드 실행!");
+}
+repeat(5, print);
+ */
+repeat(5, function () {
+    console.log("코드실행!");
+});
