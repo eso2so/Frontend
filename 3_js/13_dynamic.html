@@ -100,7 +100,7 @@
             // 문제. 각 박스 클릭 시 클릭한 박스 빨간색으로 변경
             // 모든 요소가 이벤트를 가지고 있으면 된다.
             let boxList = document.querySelectorAll(".box");
-            // boxList의 모든 요소에 이벤트를 바인딩한다. => 이벤트 전파, 위임
+            // boxList의 모든 요소에 이벤트를 바인딩한다. => 이벤트 전파, 위임(Delegate)로 대체하는 게 좋다.
             boxList.forEach(function (box) {
                 box.addEventListener("click", function () {
                     box.style.backgroundColor = "red";
