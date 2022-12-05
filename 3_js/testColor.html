@@ -1,0 +1,49 @@
+d<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                width: 500px;
+                height: 500px;
+                border: 3px solid black;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: black;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            let divElem = document.createElement("div");
+            divElem.setAttribute("class", "container");
+            document.body.appendChild(divElem);
+
+            let boxElem = document.createElement("div");
+            boxElem.setAttribute("class", "box");
+            divElem.appendChild(boxElem);
+
+            let str = "";
+            for (let i = 0; i < 10000; i++) {
+                str += "<div class='box'></div>";
+            }
+            divElem.innerHTML = str;
+
+            let boxList = document.querySelectorAll(".box");
+            boxList.forEach(function (box) {
+                box.addEventListener("click", function () {
+                    box.style.backgroundColor = "red";
+                });
+            });
+        </script>
+    </body>
+</html>
