@@ -9,11 +9,12 @@ let userList = [
 ];
 
 let result = userList.filter(function (age) {
-    age >= 30;
+    return userList.age >= 30;
 });
-console.log(result, numList);
+
+console.log(result);
 
 let result02 = userList.map(function (age) {
-    age >= 30;
+    return age >= 30;
 });
-console.log(result02, numList);
+console.log(result02);
