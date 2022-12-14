@@ -1,0 +1,22 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.slideList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+}
+
+.slideList:nth-child(1) {
+    background-color: red;
+}
+.slideList:nth-child(2) {
+    background-color: yellow;
+}
+.slideList:nth-child(1) {
+    background-color: blue;
+}
