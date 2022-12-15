@@ -1,4 +1,4 @@
-// 2번 버튼 클릭 시 2번 아이템 보이게 처리하기
+// 2번 버튼 클릭 시 2실실행행번 아이템 보이게 처리하기
 
 // 1. 버튼 가져오기
 let btnList = document.querySelectorAll(".btnList li");
