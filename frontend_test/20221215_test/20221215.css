@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    position: relative;
+    background-color: #ddd;
+}
+
+h1 {
+    position: absolute;
+    top: 33px;
+    left: 30px;
+    transform: translateY(-50%);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    height: 60px;
+    color: #000;
+}
+
+nav ul li:hover {
+    background-color: #bbb;
+    color: #fff;
+}
+
+.container {
+    overflow: hidden;
+    position: relative;
+}
+
+.slideList {
+    display: flex;
+    transition: transform 0.3s;
+}
+
+.slideItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    flex-shrink: 0;
+    font-size: 6rem;
+    color: #000;
+}
+
+.slideItem:nth-child(1) {
+    background-color: red;
+}
+.slideItem:nth-child(2) {
+    background-color: yellow;
+}
+.slideItem:nth-child(3) {
+    background-color: blue;
+}
+
+.btnList {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.btnList li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.btnList li:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btnList li + li {
+    margin-left: 10px;
+}
+
+.imgList {
+    padding: 50px 0;
+    background-color: #ddd;
+}
+
+.imgList ul {
+    display: flex;
+    justify-content: center;
+}
+
+.imgList ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+    height: 300px;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.imgList li + li {
+    margin-left: 20px;
+}
+
+.imgList ul li a {
+    width: 250px;
+    transition: transform 0.3s;
+}
+.imgList ul li a img {
+    width: 100%;
+}
+.imgList ul li a:hover {
+    transform: scale(1.1);
+}
