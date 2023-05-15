@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                width: 500px;
+                border: 3px solid black;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: black;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box"></div>
+        </div>
+        <div class="button">
+            <button class="red">red</button>
+            <button class="yellow">yellow</button>
+            <button class="blue">blue</button>
+        </div>
+
+        <script>
+            let boxElem = document.querySelectorAll(".box");
+            let btn = document.querySelector(".button button");
+            let btn1 = document.querySelector(".button .red ");
+            let btn2 = document.querySelector(".button .yellow");
+            let btn3 = document.querySelector(".button .blue");
+
+            boxElem.forEach(function (box) {
+                box.addEventListener("click", function () {
+                    box.style.backgroundColor = "red";
+                });
+            });
+        </script>
+    </body>
+</html>
