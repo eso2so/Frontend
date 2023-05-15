@@ -1,0 +1,212 @@
+:root {
+    /* :root란??? 재사용할 값을 변수에 저장한다. => 사용할 때는 var() 안에 변수명을 넣는다. 
+    <p>와 달리 전체 어디서든 쓸 수 있음.  */
+    --header-height: 60px;
+    --main-color: #fede34;
+}
+
+body {
+    padding-top: var(--header-height);
+}
+
+#header {
+    display: flex;
+    /* align-items: center; */
+    padding: 0 30px;
+
+    border-bottom: 1px solid #ddd;
+
+    max-height: var(--header-height);
+    overflow: hidden;
+    transition: max-height 0.4s;
+
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+}
+
+/* h1 선택자보다 우선순위 두기 위해서 #logo */
+#logo {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    font-size: 1.8rem;
+    line-height: 60px;
+    color: var(--main-color);
+}
+
+#gnb {
+    width: 100%;
+}
+
+#gnbList {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#gnbList > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: var(--header-height);
+}
+
+#gnbList > li:hover {
+    background-color: #ddd;
+}
+
+#gnbList .depth02 li a {
+    display: block;
+    padding: 8px 10px;
+}
+
+#gnbList .depth02 li a:hover {
+    background-color: #eee;
+}
+
+button {
+    display: none;
+}
+
+.imgList {
+    padding: 50px 0;
+}
+
+.imgList ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgList ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: pink;
+    background: center/ 100% no-repeat;
+    /* flex-shrink: 0; */
+
+    color: var(--main-color);
+
+    /* 모서리를 둥글게 처리한다. 너비와 높이가 같을 때 50%를 지정하면 정원이 만들어진다. */
+    border-radius: 50%;
+
+    transition: background-size 0.25s;
+}
+
+.imgList ul li a:hover {
+    /* transition 넣을때, background: center/ cover norepeat 중 size는 cover와 연결됨.
+    숫자로 바꿀수 없으니 숫자로 통일 */
+    background-size: 110%;
+    color: white;
+    font-weight: 700;
+}
+
+.imgList ul li:nth-child(1) a {
+    background-image: url("../images/img.jpg");
+}
+
+.imgList ul li:nth-child(2) a {
+    background-image: url("../images/images.jpg");
+}
+
+.imgList ul li:nth-child(3) a {
+    background-image: url("../images/download.jpg");
+}
+
+.imgList ul li:nth-child(4) a {
+    background-image: url("../images/b6138001c65fc005c7a588755b0c9af81.jpg");
+}
+
+.imgList ul li:nth-child(5) a {
+    background-image: url("../images/img.png");
+}
+
+.imgList ul li + li {
+    margin-left: 20px;
+}
+
+@media screen and (min-width: 961px) {
+    #header {
+        transition: 0s;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    #header:hover {
+        max-height: 400px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #header {
+        justify-content: center;
+    }
+    #gnb {
+        width: auto;
+    }
+    #gnbList {
+        display: block;
+    }
+    #gnbList .depth02 {
+        display: none;
+    }
+    #header:hover {
+        max-height: 400px;
+    }
+    button {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    :root {
+        --header-height: 50px;
+    }
+
+    #header {
+        transition: 0s;
+    }
+    #logo {
+        font-size: 1.5rem;
+        line-height: 50px;
+    }
+    #gnbList li {
+        font-size: 0.8rem;
+    }
+    /* #gnbList > li > a {
+        height: 50px; */
+    }
+    .imgList ul {
+        /* display: block; */
+        flex-direction: column;
+    }
+    .imgList ul li + li {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+
+/* #gnbList li:hover ul {
+    display: block;
+}
+
+#gnbList li ul {
+    display: none;
+} */
+
+/* #gnbList li ul {
+    height: 0;
+    overflow: hidden;
+}
+
+#gnbList li:hover ul {
+    height: auto;
+} */

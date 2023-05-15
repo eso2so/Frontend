@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+}
+
+body .box {
+    /* 선택자를 집어넣으면??? 누구의 점수가 큰가에 따름 */
+    max-width: 300px; /* 반응형 웹을 위해 최대 제한을 둠 */
+    max-height: 300px;
+    width: 50vw;
+    height: 50vh;
+
+    background-color: red;
+}
+@media screen and (max-width: 900px) and (max-width: 800px) {
+    body #box {
+        /* 더 높은 점수를 갖는 id로 해결 */
+        background-color: blue !important;
+    }
+}
+@media screen and (max-width: 700px) {
+    .box {
+        background-color: black;
+    }
+}
+/* CSS는 마지막에 입력된 것으로 작동되므로 작성 순서가 중요함 
+bootstrap에서 검색하면 나옴, 540px 스마트폰, 960px 태블릿, 1,400px 데스크탑 */

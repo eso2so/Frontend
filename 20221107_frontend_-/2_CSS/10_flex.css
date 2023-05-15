@@ -1,0 +1,66 @@
+.container {
+    display: flex; /* flex는 적용하고자 하는 요소 바로 위의 요소에 넣어야함 */
+    flex-direction: row; /* 주축이 row(기본값)냐 column 이냐 */
+    justify-content: space-between; /* justify : 주축(열) */
+    align-items: flex-end; /* align : 교차축(행), stretch가 기본값, 기억하세용 */
+    /* start 왼쪽, end 오른쪽인데 row-reverse되면 바뀜 */
+    flex-wrap: nowrap; /* 영역을 넘는 자식을 공간 안에 맞게 배치되게 도와줌 */
+
+    width: 200px;
+    height: 400px;
+
+    overflow: hidden;
+    /* padding: 30px; */
+    border: 3px solid black;
+}
+
+.box {
+    /* text-align, line-height 없이도 글자 가운데 정렬하려면 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    flex-basis: 100px;
+    /* 주축에 대한 기본값(크기), 띄어쓰기없으면 글자만큼 늘어남 
+    flex-basis: 0; 이면 여백을 비율대로 가져감(컨텐트 상관 없이 동등하게 나눔) */
+
+    /* float: left; */
+    /* width: 300px; */
+    height: 100px;
+    background-color: aquamarine;
+
+    margin: 10px;
+
+    /* animation: slide 2s infinite alternate linear; */
+    /* text-align: center; */
+    /* line-height: 100px; */
+}
+
+/* flex-grow는 남는 공간을 어떤 비율로 나눠갖는지 
+(flex-basis기본+남는 영역 중 나눠갖는값) */
+.box:nth-of-type(1) {
+    /* flex-grow: 2; */
+    /* flex-shrink: 1; */
+    flex: 2 1 100px;
+}
+.box:nth-of-type(2) {
+    /* flex-grow: 1; */
+    /* flex-shrink: 2; */
+    flex: 1 2 100px;
+}
+.box:nth-of-type(3) {
+    /* flex-grow: 3; */
+    /* flex-shrink: 1; */
+    flex: 3 1 100px;
+}
+
+.box + .box {
+    /* margin-left: 10px; */
+}
+
+@keyframes slide {
+    to {
+        transform: translate(200px);
+    }
+}

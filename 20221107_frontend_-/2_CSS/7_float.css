@@ -1,0 +1,31 @@
+img {
+    width: 300px;
+    float: right;
+}
+
+img:nth-child(2) {
+    float: left;
+}
+
+.container {
+    border: 3px solid red;
+}
+
+.box {
+    /*
+    display: inline-block;
+    font-size: 1rem;*/
+
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    float: right;
+}
+
+/* 공통적으로 쓸 것은 정리해놓으면 된다. */
+.clearFix::after {
+    /* clear를 하려면 인라인 요소면 안된다. */
+    display: block;
+    content: "";
+    clear: both;
+}

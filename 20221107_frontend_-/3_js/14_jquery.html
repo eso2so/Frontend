@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.js"
+            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+            crossorigin="anonymous"
+        ></script>
+        <title>Document</title>
+        <style>
+            .container {
+                padding: 10px;
+                border: 3px solid red;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: black;
+            }
+            .box.on {
+                border: 3px solid green;
+            }
+
+            .todoList li.done {
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <input type="text" class="inputTodo" />
+        <button>등록</button>
+        <ul class="todoList"></ul>
+        <script>
+            // console.log($);
+            // $(선택자) : 선택자에 해당하는 요소를 찾아준다. => 스타일이나 이벤트 바인딩 시 해당하는 모든 요소에 추가된다.
+            // $(".box").click(function () {
+            // alert("click");
+            // css() : 적용된 css값을 가져오거나 변경할 수 있다.
+            // $(".box").css("background-color", "red");
+            console.log(this);
+            // this나 e.target은 jQuery api를 호출할 수 없기 때문에 $() 안에 넣어야 된다.
+            // $(this).css("background-color", "red");
+            $(".box").click(function (e) {
+                $(e.target).css("background-color", "red");
+                $(e.target).text("클릭");
+                $(e.target).toggleClass("on");
+                // $(e.target).hide();
+                // $(e.target).fadeOut();
+            });
+
+            $(".container").on("mouseover", function () {
+                $(".container").css("border-color", "blue");
+            });
+
+            $("button").click(function () {
+                // $(".todoList").append(`<li>${$(".inputTodo").val()}</li>`);
+                $(".todoList").append(
+                    `<li>${$(".inputTodo").val()}<button>삭제</ button></li>`
+                );
+            });
+
+            // 이벤트 위임 : 상위요소에 이벤트를 바인딩하고 e.target을 이용해 실제 이벤트가 발생한 대상을 변경한다.
+            // todoList : ul태그가 e.currentTarget인 상태이므로 todoList li가 아닌 todoList 자체에 이벤트바인딩을 걸어야 함.
+            //  => todolist li : 바인딩을 한 시점에 존재하는 li에만 걸림
+            $(".todoList").click(function (e) {
+                // $(e.target).css("text-decoration", "line-through");
+                // $(e.target).toggleClass("done");
+                // console.log(e.target.matches(".todoList li"));
+                // Event.target.matches(선택자) : 전달된 선택자와 일치하는지 true 혹은 false 반환
+                if (e.target.matches(".todoList li")) {
+                    $(e.target).toggleClass("done");
+                } else if (e.target.matches(".todoList li button")) {
+                    if (confirm("삭제하시겠습니까?")) {
+                        /*  e.target.parentNode.parentNode.removeChild(
+                            e.target.parentNode
+                        ); */
+                        $(e.target).parent().remove();
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
